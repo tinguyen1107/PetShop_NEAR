@@ -2,8 +2,20 @@
   box-sizing: border-box;
 }
 
+img {
+  width: 200px;
+  height: 300px;
+  object-fit: contain;
+}  
+
+div.centered {
+  position: fixed; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 html {
-  --bg: #efefef;
   --fg: #1e1e1e;
   --gray: #555;
   --light-gray: #ccc;
