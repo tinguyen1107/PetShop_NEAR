@@ -45,17 +45,19 @@ const contract_owner = "tinnguyen.testnet";
 
 export function get_pets(): Array<Pet> {
   let return_pets: Array<Pet> = [];
-
+  let j = 0;
   for (let i = 0; i < pets.length; i++) {
-    if (pets[i].price > u128.from("0")) {
-      return_pets[i] = pets[i];
+    if (pets[i].price > u128.Zero) {
+      return_pets[j] = pets[i];
+      j++;
     }
   }
-  return return_pets;
+  return return_pets as Array<Pet>;
 }
 
 export function get_pets_by_owner(_owner: string): Array<Pet> {
   let return_pets: Array<Pet> = [];
+  let j = 0;
   for (let i = 0; i < pets.length; i++) {
     logging.log(i);
     logging.log(pets[i].owner);
@@ -63,6 +65,7 @@ export function get_pets_by_owner(_owner: string): Array<Pet> {
     logging.log(pets[i].owner == _owner);
     if (pets[i].owner == _owner) {
       return_pets[i] = pets[i];
+      j++;
     }
   }
   return return_pets;

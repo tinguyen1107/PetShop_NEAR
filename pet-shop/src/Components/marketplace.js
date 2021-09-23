@@ -24,11 +24,11 @@ const Marketplace = () => {
     <>
       <p>&nbsp;</p>
       {pets.length == 0 ? (
-        <div class="centered">Pet Shop is Empty !!!</div>
+        <div className="centered">Pet Shop is Empty !!!</div>
       ) : (
         <Row xs={1} md={3} className="g-4">
           {pets.map((v, k) => (
-            <Col>
+            <Col key={k}>
               <Card style={{ margin: "15px" }}>
                 <Card.Header>{v.breed}</Card.Header>
                 <Card.Img variant="top" src={v.pic} />

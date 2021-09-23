@@ -110,7 +110,7 @@ const MyPet = () => {
       ) : (
         <Row xs={1} md={3} className="g-4">
           {pets.map((v, k) => (
-            <Col>
+            <Col key={k}>
               <Card style={{ margin: "15px" }}>
                 <Card.Header>{v.breed}</Card.Header>
                 <Card.Img variant="top" src={v.pic} />
